@@ -60,11 +60,12 @@
     NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
 
     NSDate *dateNow = [NSDate date];
-    NSDateComponents *dateComponents = [calendar components:NSYearForWeekOfYearCalendarUnit |NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:dateNow];
+    NSDateComponents *dateComponents;
+//    [dateComponents setWeekday:2];
+    dateComponents = [calendar components:NSYearForWeekOfYearCalendarUnit |NSYearCalendarUnit|NSMonthCalendarUnit|NSWeekCalendarUnit|NSWeekdayCalendarUnit fromDate:dateNow];
     
-    [dateComponents setWeekday:2];
     NSDate *firstDateOfWeek = [calendar dateFromComponents:dateComponents];
-
+    
     NSDateInterval *interval = [[NSDateInterval alloc] initWithStartDate:firstDateOfWeek duration:60*60*24*7];
     
     return [interval containsDate:date];
