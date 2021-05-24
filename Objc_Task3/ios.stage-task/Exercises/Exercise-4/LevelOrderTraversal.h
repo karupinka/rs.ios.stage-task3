@@ -2,6 +2,7 @@
 #define LevelOrderTraversal_h
 
 #import <Foundation/Foundation.h>
+#import "Node.h"
 
 NSArray *LevelOrderTraversalForTree(NSArray *tree);
 
